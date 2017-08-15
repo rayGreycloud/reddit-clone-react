@@ -5,7 +5,7 @@ import { Router, Route } from 'react-router';
 
 import App from './containers/App';
 
-const Routes = () =>
+const Routes = props =>
   <Router {...props}>
     <Route path="/" component={App} />
   </Router>;
