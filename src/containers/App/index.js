@@ -24,8 +24,6 @@ class App extends Component {
     let _this = this;
     // Get updated value anytime db changes
     postsRef.on('value', function(snapshot) {
-      console.log(snapshot.val());
-
       _this.setState({
         posts: snapshot.val(),
         loading: false
@@ -37,9 +35,8 @@ class App extends Component {
     return (
       <div className="App">
         <h3>reddit.clone</h3>
-        {this.props.children &&
-          React.cloneElement(this.props.children, {
-            firebaseRef: firebase.database().ref('posts'),
+        {this.props.children &&  React.cloneElement(this.props.children, {
+            firebase: firebase.database(),
             posts: this.state.posts,
             loading: this.state.loading
           })}
