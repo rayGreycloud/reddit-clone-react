@@ -7,7 +7,9 @@ import App from './containers/App';
 
 const Routes = props =>
   <Router {...props}>
-    <Route path="/" component={App} />
+    <Route path="/" component={App}>
+      <Route path="/posts" component={Posts} />
+    </Route>
   </Router>;
 
 export default Routes;
