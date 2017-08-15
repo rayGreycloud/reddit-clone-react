@@ -12,6 +12,11 @@ class App extends Component {
     firebase.initializeApp(config);
   }
 
+  state = {
+    posts: [],
+    loading: true
+  };
+
   componentWillMount() {
     // Get posts reference from db
     let postsRef = firebase.database().ref('posts');
@@ -32,10 +37,6 @@ class App extends Component {
     return (
       <div className="App">
         <h3>reddit.clone</h3>
-        {
-          // If props exist, clone element
-          // and pass props to children
-        }
         {this.props.children &&
           React.cloneElement(this.props.children, {
             firebaseRef: firebase.database().ref('posts'),

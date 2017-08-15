@@ -6,16 +6,20 @@ class Posts extends Component {
   render() {
     // Check loading
     if (this.props.loading) {
-      return <div>Loading...</div>;
+      return (
+        <div>
+          Loading...
+        </div>
+      );
     }
 
     return (
       // Map over data and render
       <div className="Posts">
-        {this.props.posts.map(post => {
+        { this.props.posts.map(post => {
           return (
             <div>
-              {post.title}
+              { post.title }
             </div>
           );
         })}
