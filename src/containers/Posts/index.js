@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 
 class Posts extends Component {
-  handleUpVote = (post, key) => {
+  handleUpvote = (post, key) => {
     this.props.firebase.ref('posts/' + key).set({
       title: post.title,
       upvote: post.upvote + 1,
@@ -11,7 +11,7 @@ class Posts extends Component {
     });
   }
 
-  handleDownVote = (post, key) => {
+  handleDownvote = (post, key) => {
     this.props.firebase.ref('posts/' + key).set({
       title: post.title,
       upvote: post.upvote,
@@ -21,8 +21,7 @@ class Posts extends Component {
 
   render() {
     let posts = this.props.posts;
-
-    let _this = this;
+    var _this = this;
 
     if (!posts) {
       return false;
